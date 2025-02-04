@@ -1,4 +1,3 @@
-require "pry-byebug"
 def substrings(text, dictionary)
   split_text = text.downcase.split
   counted_subs = Hash.new(0)
