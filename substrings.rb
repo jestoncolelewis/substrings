@@ -1,11 +1,16 @@
 require "pry-byebug"
 def substrings(text, dictionary)
-  counted_subs = Hash.new
+  split_text = text.downcase.split
+  counted_subs = Hash.new(0)
+  
   dictionary.each do |substring|
-    if text.downcase.include?(substring)
-      counted_subs[substring] = text.count(substring)
+    split_text.each do |word|
+      if word.include?(substring)
+        counted_subs[substring] += 1
+      end
     end
   end
+  
   counted_subs
 end
 
